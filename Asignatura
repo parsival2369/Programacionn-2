@@ -1,1 +1,69 @@
+using System;
+
+public class Asignatura : Alumno, IAsignatura
+{
+	
+	{
+		public int N1 { get; set; } 
+	    public int N2 { get; set; }
+	    public int N3 { get; set; }
+	    public string NombreAsignatura { get; set; }
+	    public string Horario { get; set; } 
+	    public string NombreDocente { get; set; }
+        
+
+	public double CalcularNotaFinal()
+
+	{
+		return N1 + N2 + N3;
+	}
+
+	public double CalcularNotaFinal ( int n1, int n2, int n3)
+
+	{
+		return n1 + n2 + n3;
+	}
+
+	public string MensajeNotaFinal(double notaFinal)
+
+	{
+		if (notaFinal < 60) return "reprobado";
+		else if (notaFinal < 80) return "bueno";
+		else if (notaFinal < 90) return "Muy bueno";
+		else return "sobresaliente" 
+    }
+     
+	public void Imprimir()
+	{
+		double notaFinal1 = CalcularNotaFinal();
+		double notaFinal2 = CalcularNotaFinal(N1, N2, N3);
+		string mensaje = MensajeNotaFinal(notaFinal1);
+
+		Console.WriteLine("Alumno:"+ NombreAlumno);
+		Console.WriteLine("Numero de cuenta:" + NumeroCuenta);
+		Console.WriteLine("Email:" + Email);
+		Console.WriteLine("Asignatura:" + NombreAsignatura);
+        Console.WriteLine("Horario: " + Horario);
+        Console.WriteLine("Docente: " + NombreDocente);
+        Console.WriteLine("Nota Final (sin parametros): " + notaFinal1+"-"mensaje);
+        Console.WriteLine("Nota Final (con parametros): " + notaFinal2+"-"mensaje);
+
+
+
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+	}
+}
 
